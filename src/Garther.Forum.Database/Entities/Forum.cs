@@ -1,14 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Garther.Domain.Entities;
+namespace Garther.Forum.Database.Entities;
 
-public class User
+public class Forum
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid Id { get; set; }
+    
+    public string Title { get; set; }
 
     public ICollection<Topic> Topics { get; set; } = null!;
-    public ICollection<Comment> Comments { get; set; } = null!;
 }

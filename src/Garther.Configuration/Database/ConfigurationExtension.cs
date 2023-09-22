@@ -8,30 +8,16 @@ namespace Garther.Configuration.Database;
 
 public static class ConfigurationExtension
 {
-    private static readonly IMapper Mapper = new MapperConfiguration(config
-            => config.CreateMap<DbContextSettings<DbContext>, NpgsqlConnectionStringBuilder>())
-        .CreateMapper();
-    
-    internal static DbContextSettings<TDbContext> GetDbContextSettings<TDbContext>(this ConfigurationManager configuration) 
+    public static DbContextSettings<TDbContext> GetDbContextSettings<TDbContext>(this ConfigurationManager configuration, string configName) 
         where TDbContext : DbContext
     {
-        return GetDbContextSettings<TDbContext>(configuration, typeof(TDbContext).Name, 
-            DefaultParserConfiguration.DefaultFileName);
-    }
-
-    internal static DbContextSettings<TDbContext> GetDbContextSettings<TDbContext>(this ConfigurationManager configuration,
-        string dbContextName, string configFileName)
-            where TDbContext : DbContext
-    {
-        configuration.AddJsonFile(configFileName);
-        return  configuration.GetSection(dbContextName)
-                    .Get<DbContextSettings<TDbContext>>() ?? 
-                throw new InvalidOperationException($"Error with parse setting {dbContextName}");
-    }
-
-    internal static NpgsqlConnectionStringBuilder GetConnectionStringFromDbSettings<TDbContext>(this ConfigurationManager configuration)
-        where TDbContext : DbContext
-    {
-        return Mapper.Map<NpgsqlConnectionStringBuilder>(GetDbContextSettings<TDbContext>(configuration));
+        if (configuration.GetValue<string>("ASPNETCORE_ENVIRONMENT") == "Development")
+        {
+            configName = configName.Replace(".", ".Development.");
+        }
+        
+        configuration.AddJsonFile(configName, false, true);
+        return configuration.GetSection(typeof(TDbContext).Name)
+            .Get<DbContextSettings<TDbContext>>() ?? throw new ArgumentNullException(nameof(configName));
     }
 }

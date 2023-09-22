@@ -1,0 +1,9 @@
+﻿{
+  "ForumDbContext": {
+    "Host": "localhost",
+    "Port": 5432,
+    "Database": "forum",
+    "Username": "postgres",
+    "Password": ",frfkjdf"
+  }
+}

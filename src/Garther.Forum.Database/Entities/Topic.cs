@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Garther.Domain.Entities;
+namespace Garther.Forum.Database.Entities;
 
 public class Topic
 {
@@ -12,7 +12,7 @@ public class Topic
     public string Title { get; set; }
     
     public Guid ForumId { get; set; }
-    public Forum Forum  { get; set; }
+    public Garther.Forum.Database.Entities.Forum Forum  { get; set; }
 
     public Guid UserId { get; set; }
     public User User   { get; set; }

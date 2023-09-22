@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repository-items", "reposit
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garther.Forum.Database", "src\Garther.Forum.Database\Garther.Forum.Database.csproj", "{F52ED8ED-054D-4250-A95B-D9D43AB0E3A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,7 @@ Global
 		{BD8748A3-39B8-470F-B293-47F04A1FF0FA} = {FA3ABFD2-383E-40FB-B31D-0EAB5C327CC2}
 		{2021C8AC-A5C8-45DF-85BA-A5A1A1A47D4A} = {FA3ABFD2-383E-40FB-B31D-0EAB5C327CC2}
 		{89E2C952-F321-4AA3-8D84-3F8C79453101} = {FA3ABFD2-383E-40FB-B31D-0EAB5C327CC2}
+		{F52ED8ED-054D-4250-A95B-D9D43AB0E3A2} = {FA3ABFD2-383E-40FB-B31D-0EAB5C327CC2}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BD8748A3-39B8-470F-B293-47F04A1FF0FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -37,5 +40,9 @@ Global
 		{89E2C952-F321-4AA3-8D84-3F8C79453101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89E2C952-F321-4AA3-8D84-3F8C79453101}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89E2C952-F321-4AA3-8D84-3F8C79453101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F52ED8ED-054D-4250-A95B-D9D43AB0E3A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52ED8ED-054D-4250-A95B-D9D43AB0E3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52ED8ED-054D-4250-A95B-D9D43AB0E3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52ED8ED-054D-4250-A95B-D9D43AB0E3A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

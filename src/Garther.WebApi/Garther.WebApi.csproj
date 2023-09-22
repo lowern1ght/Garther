@@ -7,6 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.1" />
+        <PackageReference Include="Cole.AutoMapper.Extensions.Microsoft.AspNetCore" Version="1.1.0" />
+        <PackageReference Include="EFCore.NamingConventions" Version="7.0.2" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
@@ -21,11 +24,18 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
         <PackageReference Include="Npgsql" Version="7.0.6" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+        <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Controllers" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Garther.Configuration\Garther.Configuration.csproj" />
+      <ProjectReference Include="..\Garther.Domain\Garther.Domain.csproj" />
+      <ProjectReference Include="..\Garther.Forum.Database\Garther.Forum.Database.csproj" />
     </ItemGroup>
 
 </Project>
