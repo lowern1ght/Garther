@@ -9,7 +9,8 @@ public class Forum
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid Id { get; set; }
     
-    public string Title { get; set; }
+    [Required]
+    public string? Title { get; set; }
 
     public ICollection<Topic> Topics { get; set; } = null!;
 }

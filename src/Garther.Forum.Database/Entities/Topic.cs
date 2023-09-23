@@ -9,13 +9,17 @@ public class Topic
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public Guid Id { get; set; }
     
-    public string Title { get; set; }
+    [Required]
+    public string? Title { get; set; }
     
     public Guid ForumId { get; set; }
-    public Garther.Forum.Database.Entities.Forum Forum  { get; set; }
+    public Forum Forum { get; set; } = null!;
 
     public Guid UserId { get; set; }
-    public User User   { get; set; }
+    public User User { get; set; } = null!;
+    
+    public DateTimeOffset CreatedAt { get; set; }
+    public DateTimeOffset? UpdateAt { get; set; }
     
     public ICollection<Comment> Comments { get; set; } = null!;
 }
