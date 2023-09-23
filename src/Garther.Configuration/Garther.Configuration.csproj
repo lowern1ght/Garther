@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Garther.Domain\Garther.Domain.csproj" />
       <ProjectReference Include="..\Garther.Forum.Database\Garther.Forum.Database.csproj" />
     </ItemGroup>
 

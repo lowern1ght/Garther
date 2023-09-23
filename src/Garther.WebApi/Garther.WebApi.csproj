@@ -29,13 +29,13 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Garther.Configuration\Garther.Configuration.csproj" />
       <ProjectReference Include="..\Garther.Domain\Garther.Domain.csproj" />
       <ProjectReference Include="..\Garther.Forum.Database\Garther.Forum.Database.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Services" />
     </ItemGroup>
 
 </Project>

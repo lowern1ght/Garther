@@ -1,9 +1,10 @@
+using Serilog.Events;
 using System.Globalization;
 using Garther.Configuration.Configuration;
 using Garther.Configuration.Logger;
 using Garther.Forum.Database;
+using Garther.Forum.Database.Services;
 using Microsoft.EntityFrameworkCore;
-using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,12 @@ builder.Services.AddControllers();
 builder.Logging.ClearProviders()
     .AddSerilog(LogEventLevel.Debug);
 
+builder.Services.AddRouting(options 
+    => options.LowercaseUrls = true);
+
 var stringBuilder = builder.Configuration.GetConnectionStringBuilder<ForumDbContext>();
+
+builder.Services.AddSingleton<IMigrationService, MigrationService>();
 
 builder.Services.AddDbContext<ForumDbContext>(optionsBuilder 
     => optionsBuilder.UseSnakeCaseNamingConvention(CultureInfo.InvariantCulture)
@@ -24,18 +30,21 @@ if (builder.Environment.IsDevelopment())
     builder.Services.AddSwaggerGen();
 }
 
-var app = builder.Build();
+var application = builder.Build();
 
-if (app.Environment.IsDevelopment())
+application.Services.GetRequiredService<IMigrationService>()
+    .MigrateAsync<ForumDbContext>();
+
+if (application.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    application.UseSwagger();
+    application.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+application.UseHttpsRedirection();
 
-app.UseAuthorization();
+application.UseAuthorization();
 
-app.MapControllers();
+application.MapControllers();
 
-app.Run();
+application.Run();
