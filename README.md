@@ -2,7 +2,7 @@
 
 ---
 
-Production ready application forum on micro service architecture 
+Production ready application forum on microservice architecture 
 using approaches 12 factor application, DDD
 
 ## UML Design
