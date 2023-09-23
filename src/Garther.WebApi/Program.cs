@@ -1,27 +1,18 @@
 using System.Globalization;
-using Garther.Configuration.Database;
+using Garther.Configuration.Configuration;
+using Garther.Configuration.Logger;
 using Garther.Forum.Database;
-using Garther.WebApi.Mapper;
 using Microsoft.EntityFrameworkCore;
-using Serilog;
+using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var logger = new LoggerConfiguration()
-    .MinimumLevel.Debug()
-    .WriteTo.Console()
-    .CreateLogger();
-
-builder.Logging.ClearProviders()
-    .AddSerilog(logger);
-
-builder.Services.AddAutoMapper();
 builder.Services.AddControllers();
 
-var contextSettings = builder.Configuration.GetDbContextSettings<ForumDbContext>(
-    DefaultParserConfiguration.DefaultFileName);
+builder.Logging.ClearProviders()
+    .AddSerilog(LogEventLevel.Debug);
 
-var stringBuilder = DbSettingsMapper.MappedDbContextSettings(contextSettings);
+var stringBuilder = builder.Configuration.GetConnectionStringBuilder<ForumDbContext>();
 
 builder.Services.AddDbContext<ForumDbContext>(optionsBuilder 
     => optionsBuilder.UseSnakeCaseNamingConvention(CultureInfo.InvariantCulture)
