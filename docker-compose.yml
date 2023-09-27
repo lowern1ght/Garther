@@ -1,0 +1,17 @@
+
+version: '3.4'
+
+services:
+  comments-indexing-service:
+    image: garthercommentsindexing
+    build:
+      context: .
+      dockerfile: src/services/Garther.Comments.Indexing/Dockerfile
+  elasticsearch:
+    image: elasticsearch:8.8.0
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
