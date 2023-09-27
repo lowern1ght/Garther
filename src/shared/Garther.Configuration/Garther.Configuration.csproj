@@ -19,10 +19,5 @@
       <PackageReference Include="Npgsql" Version="7.0.6" />
       <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Garther.Domain\Garther.Domain.csproj" />
-      <ProjectReference Include="..\Garther.Forum.Database\Garther.Forum.Database.csproj" />
-    </ItemGroup>
-
+    
 </Project>

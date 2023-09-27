@@ -1,5 +1,4 @@
-﻿using Garther.Forum.Database.Repositories.Interfaces;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace Garther.Forum.Database.Repositories;
 
