@@ -14,6 +14,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Garther.Configuration\Garther.Configuration.csproj" />
       <ProjectReference Include="..\Garther.Forum.Database\Garther.Forum.Database.csproj" />
+      <ProjectReference Include="..\Garther.Shared.Extension\Garther.Shared.Extension.csproj" />
     </ItemGroup>
 
 </Project>

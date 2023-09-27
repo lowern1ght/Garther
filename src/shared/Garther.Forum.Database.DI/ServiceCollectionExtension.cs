@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Garther.Configuration.Configuration;
+using Garther.Shared.Extension;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,11 +40,5 @@ public static class ServiceCollectionExtension
         }
         
         return serviceCollection;
-    }
-
-    private static Type GetInterfaceByName(this Type type, string interfaceName)
-    {
-        return type.GetInterfaces()
-            .First(t => t.Name.Contains(interfaceName));
     }
 }
