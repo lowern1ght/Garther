@@ -1,6 +1,3 @@
-﻿namespace Garther.Comments.Indexing.Services;
+﻿namespace Garther.Comments.Indexer.Services;
 
-public interface IIndexerService
-{
-    
-}
+public interface IIndexerService { }
