@@ -2,7 +2,6 @@
 using Garther.Exceptions.Database;
 using Garther.Forum.Database.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace Garther.Forum.Database.Repositories;
 
@@ -41,7 +40,7 @@ public class ForumRepository : IForumRepository
         catch (Exception)
         {
             await transaction.RollbackAsync(token);
-            throw new CreateEntityException($"Fail to commit new entity {typeof(Entities.Forum)}");
+            throw new CreateEntityException($"Fail to commit new entity {forum}");
         }
     }
 
