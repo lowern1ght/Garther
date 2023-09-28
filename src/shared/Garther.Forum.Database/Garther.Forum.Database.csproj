@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
             <PrivateAssets>all</PrivateAssets>
@@ -18,6 +19,8 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Garther.Configuration\Garther.Configuration.csproj"/>
+        <ProjectReference Include="..\Garther.Domain\Garther.Domain.csproj" />
+        <ProjectReference Include="..\Garther.Exceptions\Garther.Exceptions.csproj" />
     </ItemGroup>
 
 </Project>

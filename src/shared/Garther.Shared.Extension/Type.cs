@@ -1,8 +1,8 @@
 ﻿namespace Garther.Shared.Extension;
 
-public static class TypeExtension
+public static class Type
 {
-    public static Type GetInterfaceByName(this Type type, string interfaceName)
+    public static System.Type GetInterfaceByName(this System.Type type, string interfaceName)
     {
         return type.GetInterfaces()
             .First(t => t.Name.Contains(interfaceName));
