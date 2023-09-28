@@ -11,7 +11,7 @@ public class MigrationService : IMigrationService
     {
         _serviceProvider = serviceProvider;
     }
-    
+
     public async Task MigrateAsync<TDbContext>()
         where TDbContext : DbContext
     {

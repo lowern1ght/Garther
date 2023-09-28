@@ -12,7 +12,7 @@ public class ForumRepository : IForumRepository
         _logger = logger;
         _forumDbContext = forumDbContext;
     }
-    
+
     public Task<bool> ForumExists(Guid id, CancellationToken token)
     {
         throw new NotImplementedException();
@@ -25,6 +25,6 @@ public class ForumRepository : IForumRepository
 
     public Task<IEnumerable<IEnumerable<Entities.Forum>>> GetForumsAsync(Guid id)
     {
-        throw new NotImplementedException(); 
+        throw new NotImplementedException();
     }
 }

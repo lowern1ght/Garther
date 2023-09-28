@@ -1,9 +1,8 @@
-
 version: '3.4'
 
 services:
   garthercommentsindexing:
-    image: garthercommentsindexing
+    image: comments-indexing-service
     build:
       context: .
       dockerfile: src/services/Garther.Comments.Indexing/Dockerfile

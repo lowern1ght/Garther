@@ -8,14 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\..\..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+        <Content Include="..\..\..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ocelot" Version="19.0.3" />
-      <PackageReference Include="Ocelot.Cache.CacheManager" Version="19.0.3" />
+        <PackageReference Include="Ocelot" Version="19.0.3"/>
+        <PackageReference Include="Ocelot.Cache.CacheManager" Version="19.0.3"/>
     </ItemGroup>
 
 </Project>

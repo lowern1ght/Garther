@@ -7,14 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Garther.Configuration\Garther.Configuration.csproj" />
-      <ProjectReference Include="..\Garther.Forum.Database\Garther.Forum.Database.csproj" />
-      <ProjectReference Include="..\Garther.Shared.Extension\Garther.Shared.Extension.csproj" />
+        <ProjectReference Include="..\Garther.Configuration\Garther.Configuration.csproj"/>
+        <ProjectReference Include="..\Garther.Forum.Database\Garther.Forum.Database.csproj"/>
+        <ProjectReference Include="..\Garther.Shared.Extension\Garther.Shared.Extension.csproj"/>
     </ItemGroup>
 
 </Project>

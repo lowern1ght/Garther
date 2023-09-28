@@ -2,13 +2,13 @@
 
 ---
 
-Production ready application forum on microservice architecture 
+Production ready application forum on microservice architecture
 using approaches 12 factor application, DDD
 
 ## UML Design
 
 > This example is an application architecture plan with no explicit
-dependencies except for the ElasticSearch engine
+> dependencies except for the ElasticSearch engine
 
 ![arhi](repo/images/uml-archi_01.png)
 
@@ -18,13 +18,13 @@ dependencies except for the ElasticSearch engine
 
 ## Implementations
 
- - Main database forum models => **PostgreSQL**
- - Search Engine => **ElasticSearch**
- - REST Server realization on => **ASP.NET Core**
-   - with _ORM_ **EF Core 7**
- - ApiGateway => **Ocelot.NET**
- - IdentityService => ASP.NET Identity With OpenID => **in progress**
- - Message broker => RabbitMQ
+- Main database forum models => **PostgreSQL**
+- Search Engine => **ElasticSearch**
+- REST Server realization on => **ASP.NET Core**
+    - with _ORM_ **EF Core 7**
+- ApiGateway => **Ocelot.NET**
+- IdentityService => ASP.NET Identity With OpenID => **in progress**
+- Message broker => RabbitMQ
 
 ## Features
 
