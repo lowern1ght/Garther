@@ -1,6 +1,6 @@
 ﻿using Garther.Forum.Database.Entities;
 
-namespace Garther.Forum.Database.Repositories;
+namespace Garther.Forum.Database.Repositories.Interfaces;
 
 public interface ITopicRepository
 {

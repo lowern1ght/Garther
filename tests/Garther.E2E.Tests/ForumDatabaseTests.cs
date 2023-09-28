@@ -3,6 +3,7 @@ using Garther.Forum.Database;
 using Garther.Forum.Database.DI;
 using Garther.Shared.Extension;
 using Microsoft.Extensions.DependencyInjection;
+using Type = System.Type;
 
 namespace Garther.E2E.Tests;
 
@@ -28,7 +29,8 @@ public class ForumDatabaseTests
         var types = Assembly.GetAssembly(typeof(ForumDbContext))
             ?.GetTypes();
 
-        if (types is null) throw new ArgumentNullException(nameof(types));
+        if (types is null) 
+            throw new ArgumentNullException(nameof(types));
 
         var result = new List<KeyValuePair<Type, Type>>();
 
