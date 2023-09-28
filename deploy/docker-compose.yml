@@ -1,16 +1,23 @@
+
 version: '3.4'
 
+name: grather
+
 services:
+  comments-indexing-service:
+    image: comments-indexing
+    build:
+      context: .
+      dockerfile: src/services/Garther.Comments.Indexing/Dockerfile
   elasticsearch:
-    image: elasticsearch:8.10.2
-    container_name: elasticsearch-comments
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=true
+    image: elasticsearch:8.8.0
     restart: always
     ports:
       - "9200:9200"
       - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
     volumes:
       - esdata:/usr/share/elasticsearch/data
   kibana:
@@ -23,5 +30,19 @@ services:
       - ELASTICSEARCH_HOSTS=https://elasticsearch-comments:9200
     depends_on:
       - elasticsearch
+  rabbit-indexer:
+    image: rabbitmq:3.12.6-management
+    hostname: rabbit
+    restart: always
+    domainname: rabbit-index
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: ",frfkjdf"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    entrypoint: [ "bash", "rabbitmqadmin", "import", "/usr/config/rabbit.index.json", "-u admin", "-p ,frfkjdf" ]
+    volumes:
+      - "./rabbit.index.config:/usr/local/bin/rabbit.index.json"
 volumes: 
   esdata:

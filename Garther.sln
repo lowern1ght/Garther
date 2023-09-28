@@ -32,6 +32,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{0A4434
 		deploy\.dockerignore = deploy\.dockerignore
 		deploy\docker-compose.debug.yml = deploy\docker-compose.debug.yml
 		deploy\docker-compose.yml = deploy\docker-compose.yml
+		deploy\rabbit-index.config = deploy\rabbit-index.config
+		deploy\rabbit.index.json = deploy\rabbit.index.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{B901CEB5-3428-4001-A4CF-5C20E0BBE5AE}"
@@ -53,6 +55,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garther.Shared.Extension", "src\shared\Garther.Shared.Extension\Garther.Shared.Extension.csproj", "{5A708696-EBA4-4C22-AC64-C561D4B04E66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garther.Exceptions", "src\shared\Garther.Exceptions\Garther.Exceptions.csproj", "{07D8E2B2-65C8-45FD-B220-107CC0F68D27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq-scripts", "rabbitmq-scripts", "{87B7F04C-B2CA-4774-A151-F318E56C0B71}"
+	ProjectSection(SolutionItems) = preProject
+		deploy\rabbitmq-scripts\index-up.sh = deploy\rabbitmq-scripts\index-up.sh
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +85,7 @@ Global
 		{2C0221EA-0A1D-4E81-A4C2-E38300F1480B} = {9E41347C-9960-47F6-9075-9250829BC372}
 		{5A708696-EBA4-4C22-AC64-C561D4B04E66} = {B901CEB5-3428-4001-A4CF-5C20E0BBE5AE}
 		{07D8E2B2-65C8-45FD-B220-107CC0F68D27} = {B901CEB5-3428-4001-A4CF-5C20E0BBE5AE}
+		{87B7F04C-B2CA-4774-A151-F318E56C0B71} = {0A443491-133C-4DA9-95EC-4D5DBD57109C}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{061C517C-6F80-45B6-81EA-CC17B61F150D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
