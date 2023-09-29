@@ -2,6 +2,6 @@
 
 public class CreateEntityException : Exception
 {
-    public CreateEntityException(string message, Exception? exception = null)
-        : base(message, exception) { }
+    public CreateEntityException(object entity, Exception? exception = null)
+        : base($"Fail to commit new entity {entity}", exception) { }
 }

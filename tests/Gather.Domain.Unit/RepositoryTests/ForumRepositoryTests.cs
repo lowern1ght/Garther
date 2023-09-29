@@ -33,7 +33,7 @@ public class ForumRepositoryTests
     {
         var exception = await Record.ExceptionAsync(async () => 
             await _serviceProvider.GetRequiredService<IForumRepository>()
-                .CreateForumAsync(
+                .AddEntity(
                     new() { Id = Guid.Parse("6DD564CA-C057-4E3E-8FAA-4ED53DED1F29"), Title = "It Books", Topics = null },
                     new CancellationTokenSource().Token));
         

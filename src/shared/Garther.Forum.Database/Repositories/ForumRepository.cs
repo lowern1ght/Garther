@@ -7,45 +7,46 @@ namespace Garther.Forum.Database.Repositories;
 
 public class ForumRepository : IForumRepository
 {
-    private readonly IMapper _mapper;
     private readonly ForumDbContext _forumDbContext;
 
     public ForumRepository(ForumDbContext forumDbContext, IMapper mapper)
     {
-        _mapper = mapper;
         _forumDbContext = forumDbContext;
     }
 
-    public Task<bool> ForumExistsAsync(Guid id, CancellationToken token)
+    public Task<bool> ForumExists(Guid id, CancellationToken token)
     {
         return  _forumDbContext.Forums.AnyAsync(forum => forum.Id.Equals(id), 
             cancellationToken: token);
     }
 
-    public Task<Entities.Forum> GetForumByIdAsync(Guid id, CancellationToken token)
+    public Task<Entities.Forum> GetForumById(Guid id, CancellationToken token)
     {
         return _forumDbContext.Forums.FirstAsync(forum => forum.Id.Equals(id), 
             cancellationToken: token);
     }
 
-    public async Task CreateForumAsync(Entities.Forum forum, CancellationToken token)
+    public async Task<IEnumerable<Entities.Forum>> GetForums(Guid id, CancellationToken token)
+    {
+        return await _forumDbContext.Forums.Where(forum => forum.Id.Equals(id))
+            .AsNoTracking()
+            .ToArrayAsync(cancellationToken: token);
+    }
+
+    public async Task AddEntity(Entities.Forum forum, CancellationToken token)
     {
         await using var transaction = await _forumDbContext.Database.BeginTransactionAsync(token);
         
         try
         {
             await _forumDbContext.Forums.AddAsync(forum, token);
+            await _forumDbContext.SaveChangesAsync(token);
             await transaction.CommitAsync(token);
         }
         catch (Exception)
         {
             await transaction.RollbackAsync(token);
-            throw new CreateEntityException($"Fail to commit new entity {forum}");
+            throw new CreateEntityException(forum);
         }
-    }
-
-    public Task<IEnumerable<IEnumerable<Entities.Forum>>> GetForumByIdAsync(Guid id, int count, int skip, CancellationToken token)
-    {
-        throw new NotImplementedException();
     }
 }

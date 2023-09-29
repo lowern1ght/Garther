@@ -1,9 +1,8 @@
 ﻿namespace Garther.Forum.Database.Repositories.Interfaces;
 
-public interface IForumRepository
+public interface IForumRepository : IAddEntity<Entities.Forum>
 {
-    Task<bool> ForumExistsAsync(Guid id, CancellationToken token);
-    Task CreateForumAsync(Entities.Forum forum, CancellationToken token);
-    Task<Forum.Database.Entities.Forum> GetForumByIdAsync(Guid id, CancellationToken token);
-    Task<IEnumerable<IEnumerable<Entities.Forum>>> GetForumByIdAsync(Guid id, int count, int skip, CancellationToken token);
+    Task<bool> ForumExists(Guid id, CancellationToken token);
+    Task<Forum.Database.Entities.Forum> GetForumById(Guid id, CancellationToken token);
+    Task<IEnumerable<Entities.Forum>> GetForums(Guid id, CancellationToken token);
 }

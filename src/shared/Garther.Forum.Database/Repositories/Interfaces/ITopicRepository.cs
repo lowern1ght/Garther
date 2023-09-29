@@ -2,8 +2,7 @@
 
 namespace Garther.Forum.Database.Repositories.Interfaces;
 
-public interface ITopicRepository
+public interface ITopicRepository : IAddEntity<Topic>
 {
-    Task AddTopicAsync(Topic topic, CancellationToken token);
-    Task<IEnumerable<Topic>> GetTopicsInForumAsync(Guid forumId, CancellationToken token);
+    Task<IEnumerable<Topic>> GetTopicsByForum(Guid forumId, CancellationToken token);
 }
