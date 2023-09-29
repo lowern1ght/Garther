@@ -62,6 +62,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq-scripts", "rabbitm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garther.Infrastructure", "src\shared\Garther.Infrastructure\Garther.Infrastructure.csproj", "{39185438-4289-4DE2-83A2-2D93C26ACCED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repo", "repo", "{F58B4BC0-89C3-4A40-AA03-80ADAD497971}"
+	ProjectSection(SolutionItems) = preProject
+		repo\images\uml-archi_01.png = repo\images\uml-archi_01.png
+		repo\images\uml-data.png = repo\images\uml-data.png
+		repo\_.archimate = repo\_.archimate
+		repo\_.archimate.bak = repo\_.archimate.bak
+		repo\_cm_h.png = repo\_cm_h.png
+		repo\_rg_h.png = repo\_rg_h.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +98,7 @@ Global
 		{07D8E2B2-65C8-45FD-B220-107CC0F68D27} = {B901CEB5-3428-4001-A4CF-5C20E0BBE5AE}
 		{87B7F04C-B2CA-4774-A151-F318E56C0B71} = {0A443491-133C-4DA9-95EC-4D5DBD57109C}
 		{39185438-4289-4DE2-83A2-2D93C26ACCED} = {B901CEB5-3428-4001-A4CF-5C20E0BBE5AE}
+		{F58B4BC0-89C3-4A40-AA03-80ADAD497971} = {1688A5F9-1A44-460B-864F-78A2119A5B8B}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{061C517C-6F80-45B6-81EA-CC17B61F150D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

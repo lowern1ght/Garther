@@ -3,7 +3,7 @@
 ---
 
 Production ready application forum on microservice architecture
-using approaches 12 factor application, DDD
+using approaches 12 factor application, DDD, CQRS, MsQ
 
 ## UML Design
 
@@ -28,8 +28,31 @@ using approaches 12 factor application, DDD
 
 ## Features
 
-...in progress
+### CQRS
+
+The project uses the CQRS architectural pattern with its own implementation
+
+1. RequestHandler
+
+![req_handler](repo/_rg_h.png)
+
+2. CommandHandler
+
+![CommandHandler](repo/_cm_h.png)
 
 ## Getting Start
 
-...in progress
+1. Copy git repo to local machine
+
+``` bash
+  git clone https://lowern1ght/Garther && cd Garther/deploy
+```
+
+2. setup configuration file in _/deploy_ directory
+
+
+3. Execute docker-compose command to build and up project
+
+```bash
+docker-compose buid && docker-compose up -d
+```
