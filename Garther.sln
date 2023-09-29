@@ -32,7 +32,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{0A4434
 		deploy\.dockerignore = deploy\.dockerignore
 		deploy\docker-compose.debug.yml = deploy\docker-compose.debug.yml
 		deploy\docker-compose.yml = deploy\docker-compose.yml
-		deploy\rabbit-index.config = deploy\rabbit-index.config
 		deploy\rabbit.index.json = deploy\rabbit.index.json
 	EndProjectSection
 EndProject
